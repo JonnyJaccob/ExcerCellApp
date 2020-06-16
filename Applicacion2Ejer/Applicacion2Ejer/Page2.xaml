@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Applicacion2Ejer.Page2">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Label Text="Personalizar"
+                FontSize="Title"
+                   FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="Beige" Margin="50,50,50,50">
+                <Image x:Name="FileImagePreview" HorizontalOptions="Start" Aspect="Fill" ></Image>
+            </StackLayout>
+            <Button x:Name="ImportarImagen" Text="Subir imagen" Clicked="OnButtonClicked_SubirImagenAsync"></Button>
+            <Button Text="Guardar Imagen" Clicked="OnButtonClicked_GuardarImagen"></Button>
+            <!--Comentario-->
+            <!--<Button x:Name="Pick File" HorizontalOptions="Start" Text="Pick File" Clicked="PickFile_Clicked"></Button>-->
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
