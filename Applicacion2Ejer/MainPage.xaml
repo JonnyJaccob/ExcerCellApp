@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Applicacion2Ejer"
+             mc:Ignorable="d"
+             x:Class="Applicacion2Ejer.MainPage">
+    
+
+    <ContentPage.BindingContext>
+        <local:Rutina></local:Rutina>
+        
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout BackgroundColor="Gray" Margin="10,10,10,10">
+            <StackLayout BackgroundColor="#bcdcdb">
+                <Button x:Name="BotonVolumen" BackgroundColor="Aqua"  Text="¿Mutear?" Clicked="OnButtonClicked_Mute"></Button> 
+                
+                <Button BackgroundColor="Aqua"   Text="..."  ></Button>
+            </StackLayout>
+            <StackLayout BackgroundColor="DarkCyan">
+            <BoxView HeightRequest="10" />
+            <Label Text="Personaliza tu rutina" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start"/>
+            <Entry x:Name="NombreRutina"
+               Placeholder="Nombre de su rutina"
+               Text="{Binding Nombre}"
+               MaxLength="30"
+               IsSpellCheckEnabled="True"
+               IsTextPredictionEnabled="True"
+               IsPassword="False"
+               Keyboard="Text"/>
+            <Label Text="Tiempo" HorizontalOptions="Center"></Label>
+            <Label Text="" HorizontalOptions="Start"></Label>
+                
+            <Button Text="+" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_Mas" Pressed="OnButtonPressed_Mas"></Button>
+            <Label x:Name="lblTiempo"  Text="{Binding Tiempo}" HorizontalOptions="Center"></Label>
+            <Button Text="-" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_Menos" Pressed="OnButtonPressed_Menos"></Button>
+            <Label Text="" HorizontalOptions="Start"></Label>
+
+            <Label Text="Descanso" HorizontalOptions="Center"></Label>
+            <Label Text="" HorizontalOptions="Start"></Label>
+                
+            <Button Text="+" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_MasD" Pressed="OnButtonPressed_MasD"></Button>
+            <Label x:Name="lblDescanso" Text="{Binding MostrarDescanso}" HorizontalOptions="Center"></Label>
+            <Button Text="-" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_MenosD" Pressed="OnButtonPressed_MenosD"></Button>
+            <Label Text="" HorizontalOptions="Start"></Label>
+                
+            <Label Text="Tiempo" HorizontalOptions="Center"></Label>
+            <Label Text="" HorizontalOptions="Start"></Label>
+                
+            <Button Text="+" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_MasS" ></Button>
+            <Label Text="{Binding MostrarFases}" HorizontalOptions="Center" x:Name="lblFases"></Label>
+            <Button Text="-" HorizontalOptions="Center" FontAttributes="Bold"
+                Clicked="OnButtonClicked_MenosS" ></Button>
+            <Label Text="{Binding MostrarNombre}"/>
+                <Button Text="Personalizar" Clicked="OnButtonClicked_Personalizar" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Button>
+            <Button Text="Ejercicio rapido" Clicked="OnButtonClicked_Inicio" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Button>
+                <Button Text="Guardar Ejercicio" Clicked="OnButtonClicked_Inicio" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"></Button>
+        </StackLayout>
+            <StackLayout x:Name="EjercicioG" Margin="20,20,20,20">
+                
+            </StackLayout>
+    </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>
